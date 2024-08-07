@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ui:
+    image: node:14
+    container_name: dineout
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - '3000:3000'
+    command: npm start
+    environment:
+      - NODE_ENV=development
