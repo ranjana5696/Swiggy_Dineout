@@ -10,12 +10,13 @@ const BlogPage = () => {
 
   const fetchBlogData = async () => {
     try {
-      const response = await fetch("https://dummyapi.online/api/blogposts", {
+      const response = await fetch("https://dummyjson.com/posts", {
         method: "GET",
       });
       if (response.ok) {
         const res = await response.json();
-        setBlogData(res);
+        let Posts = res.posts;
+        setBlogData(Posts);
       }
     } catch (error) {
       console.error("Error fetching blog data:", error);
@@ -36,8 +37,8 @@ const BlogPage = () => {
     <>
       <Box sx={{ width: "1150px", m: "auto", p: "40px 0" }}>
         <Box sx={{display:'flex', flexWrap:'wrap'}}>
-            {blogData && blogData.map((res)=>{
-                return <BlogPageCard key={res.id} res={res} />
+            {blogData && blogData.map((Posts)=>{
+                return <BlogPageCard key={Posts.id} res={Posts} />
             })}
         </Box>
       </Box>
