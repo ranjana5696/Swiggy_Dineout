@@ -6,7 +6,7 @@ export const getRandomImageUrl = () => {
 };
 
 const BlogPageCard = ({res}) => {
-    const {author, content, date_published, title} = res;
+    const {content, date_published, title} = res;
 
   return (
     <>
@@ -25,9 +25,6 @@ const BlogPageCard = ({res}) => {
                         </Typography>
                         <Typography className='blogContent' variant="body2" color="text.secondary" overflow={'hidden'} textOverflow={'ellipsis'} >
                             {content}
-                        </Typography>
-                        <Typography variant="body2" color="text.primary" mt={'15px'}>
-                            {author}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
